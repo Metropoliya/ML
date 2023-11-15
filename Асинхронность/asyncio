@@ -30,7 +30,6 @@ if __name__ == '__main__':
         start_time = time.time()
         loop = asyncio.get_event_loop()
         future = asyncio.ensure_future(fetch_async(loop, ntimes))
-        # будет выполняться до тех пор, пока не завершится или не возникнет ошибка
         loop.run_until_complete(future)
         responses = future.result()
         print(f'Получено {ntimes} результатов запроса за {time.time() - start_time} секунд')
